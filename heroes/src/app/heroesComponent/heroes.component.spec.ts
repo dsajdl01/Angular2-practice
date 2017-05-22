@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {HeroService} from '../services/hero.service';
 import {Hero} from '../hero';
 import {Http} from '@angular/http';
-
+/*
 const HEROES: Hero[] = [
   {id: 1, name: 'Bob'},
   {id: 2, name: 'Wood'},
@@ -82,3 +82,4 @@ describe('HeroesComponent', () => {
   });
 
 });
+*/

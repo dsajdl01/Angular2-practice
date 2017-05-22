@@ -15,7 +15,7 @@ const HEROES: Hero[] = [
   { id: 6, name: 'Clair'}];
 
 export class FakeHeroService extends HeroService {
-
+/*
   public lastPromise: Promise<any>;
   constructor() {
     super();
@@ -23,12 +23,12 @@ export class FakeHeroService extends HeroService {
 
   getHeroes() {
     return this.lastPromise = Promise.resolve<Hero[]>(HEROES);
-  }
+  } */
 }
 
 
 describe('DashboardComponent', () => {
-
+/*
   let comp: DashboardComponent;
   let heroService: FakeHeroService;
 
@@ -57,5 +57,5 @@ describe('DashboardComponent', () => {
         expect(comp.heroes[2].name).toEqual('Alice');
         expect(comp.heroes[3].name).toEqual('Welsh');
       })
-  });
+  }); */
 });
