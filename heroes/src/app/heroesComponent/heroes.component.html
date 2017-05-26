@@ -6,12 +6,13 @@
 </div>
 
 <div class="container">
+    <button type="button" class="btn btn-default" (click)="openDialog();">Add New Hero</button>
     <div class="pull-left">
         <ul class="heroes">
             <li *ngFor="let hero of heroes | slice:0:half;"
                 [class.selected]="hero === selectedHero"
                 (click)="onSelect(hero)">
-                <span class="badge">{{hero.id}}</span> {{hero.name}}
+                <span class="badge">{{hero.id}}</span> <span class="heroName"> {{hero.name}} </span>
                 <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
             </li>
         </ul>
@@ -21,15 +22,29 @@
             <li *ngFor="let hero of heroes | slice:half;"
                 [class.selected]="hero === selectedHero"
                 (click)="onSelect(hero)">
-                <span class="badge">{{hero.id}}</span> {{hero.name}}
+                <span class="badge">{{hero.id}}</span> <span class="heroName"> {{hero.name}} </span>
                 <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
             </li>
         </ul>
     </div>
 </div>
-<div *ngIf="selectedHero">
-    <h2>
-        {{selectedHero.name | uppercase}} is my hero
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
+<div class="heroView">
+    <div *ngIf="selectedHero">
+        <h2>
+            {{selectedHero.name | uppercase}} is my hero
+        </h2>
+        <button (click)="gotoDetail()">View Details</button>
+    </div>
 </div>
+<modal #addHeroModal [keyboard]="true" [backdrop]="'static'">
+    <modal-header>
+        <h4 class="modal-title">Add New Hero</h4>
+    </modal-header>
+    <modal-body>
+        <label>Hero name:</label> <input autofocus type="text" #heroName />
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="dismiss()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="saveHero(heroName.value); heroName.value=''">Save</button>
+    </modal-footer>
+</modal>

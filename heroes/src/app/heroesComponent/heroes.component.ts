@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Hero } from '../hero';
 import { HeroService } from '../services/hero.service';
+import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @Component({
   selector: 'my-heroes',
@@ -12,6 +13,8 @@ import { HeroService } from '../services/hero.service';
 
 export class HeroesComponent implements OnInit {
 
+    @ViewChild('addHeroModal')
+    modal: ModalComponent;
     heroes: Hero[] = [];
     selectedHero: Hero;
     half: number = 0;
@@ -54,5 +57,21 @@ export class HeroesComponent implements OnInit {
             this.heroes = this.heroes.filter(h => h !== hero);
             if (this.selectedHero === hero) { this.selectedHero = null; }
           });
+    }
+
+    saveHero(name: string) {
+        console.log('SAVEHERO');
+        this.add(name);
+        this.modal.close();
+    }
+
+    openDialog() {
+        console.log('OPEN');
+        this.modal.open();
+    }
+
+    dismiss() {
+        console.log('DISMISS');
+        this.modal.dismiss();
     }
 }
