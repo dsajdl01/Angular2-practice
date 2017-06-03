@@ -10,7 +10,7 @@ The sources which were used to build all project:
 ## heroes project 'directory'
 The heroes project is taken from Angular quickstart where I cloned quickstart Angular project:
 
-  git clone https://github.com/angular/quickstart.git quickstart
+          git clone https://github.com/angular/quickstart.git quickstart
 
 and then I modified quickstart project base on the Heroes tutorial on the following source:
 
