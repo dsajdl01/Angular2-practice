@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
                     <a routerLink="/heroes" >Heroes</a>
                     <a routerLink="/dashboard">Dashboard</a>
                     <a routerLink="/tags">Tag</a>
+                    <a routerLink="/dragDrop">Drag Drop</a>
                     <a (click)="modal.open()">About</a>
                 </nav>
                 <router-outlet></router-outlet>
