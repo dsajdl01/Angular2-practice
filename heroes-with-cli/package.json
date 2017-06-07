@@ -25,6 +25,7 @@
     "angular2-in-memory-web-api": "0.0.21",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
+    "angular2-toaster": "^4.0.0 ",
     "ng2-bs3-modal": "^0.10.4",
     "ng2-drag-drop": "^2.0.1",
     "ng2-tag-input": "^1.2.8",

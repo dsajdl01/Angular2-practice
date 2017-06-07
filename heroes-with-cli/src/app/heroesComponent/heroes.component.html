@@ -1,6 +1,17 @@
 <h2>My Heroes</h2>
 
 <div>
+  <toaster-container [toasterconfig]="config1"></toaster-container>
+  <button (click)="popToast()">Pop info Toaster</button>
+  <toaster-container [toasterconfig]="config2"></toaster-container>
+  <button (click)="popSuccessToast()">Pop Success Toaster</button>
+  <toaster-container [toasterconfig]="config3"></toaster-container>
+  <button (click)="popErrorToast()">Pop Error Toaster</button>
+  <toaster-container [toasterconfig]="config4"></toaster-container>
+  <button (click)="popWarningToast()">Pop Warning Toaster</button>
+</div>
+<br/>
+<div>
     <label>Hero name:</label> <input #heroName />
     <button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
@@ -36,6 +47,7 @@
         <button (click)="gotoDetail()">View Details</button>
     </div>
 </div>
+
 <modal #addHeroModal [keyboard]="true" [backdrop]="'static'">
     <modal-header>
         <h4 class="modal-title">Add New Hero</h4>

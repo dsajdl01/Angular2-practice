@@ -8,6 +8,7 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import {TagInputModule} from 'ng2-tag-input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Ng2DragDropModule } from 'ng2-drag-drop';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -33,6 +34,7 @@ import {TagComponent} from './tagComponent/tag.component';
         Ng2Bs3ModalModule,
         TagInputModule,
         BrowserAnimationsModule,
+        ToasterModule,
         Ng2DragDropModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
         AppRoutingModule
@@ -47,7 +49,7 @@ import {TagComponent} from './tagComponent/tag.component';
         TagComponent,
         DragDropComponent
       ],
-      providers: [HeroService, TagService ],
+      providers: [HeroService, TagService, ToasterService ],
       bootstrap: [ HomeComponent ]
 })
 
